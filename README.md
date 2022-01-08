@@ -28,7 +28,7 @@ All are welcome to contribute.
 N/A
 
 ## Questions
-"Feel free to reach out to be via github or my email with any questions."
+Feel free to reach out to be via github or my email with any questions.
 
 ## Github
 KYLETCHIU
