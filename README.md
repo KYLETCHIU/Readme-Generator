@@ -2,32 +2,32 @@
 ![GitHub license](http://img.shields.io/badge/license-MIT-green)
 
 ## Description
-A simple but useful tool for generating professional README.md files.
+A simple but helpful tool for making professional README.md files.
 
 ## Table of Contents
-* [installation](#installation)
-* [usage](#usage)
-* [contributors](#contributors)
-* [tests](#tests)
-* [questions](questions)
-* [github](#github)
-* [email](#email)
-* [license](#license)
-* [repo](#repo)
+* [Installation](#Installation)
+* [Usage](#Usage)
+* [Contributors](#Contributors)
+* [Tests](#Tests)
+* [Questions](Questions)
+* [Github](#Github)
+* [Email](#Email)
+* [License](#License)
+* [Repo](#Repo)
 
-## installation
-Node, Fs, Inquire, Utils 
+## Installation
+Node, Utils, Fs, Inquire, 
 
-## usage
-This project is meant to be used to shorten and simplify the proccess of making README.md files.
+## Usage
+This project is meant to be used to shorten and simplify the process of making README.md files.
 
-## contributing
-All are free to contribute.
+## Contributing
+All are welcome to contribute.
 
-## tests
+## Tests
 N/A
 
-## questions
+## Questions
 "Feel free to reach out to be via github or my email with any questions."
 
 ## Github

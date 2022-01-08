@@ -6,29 +6,29 @@ const generateMarkdown = data => {
 ${data.description}
 
 ## Table of Contents
-* [installation](#installation)
-* [usage](#usage)
-* [contributors](#contributors)
-* [tests](#tests)
-* [questions](questions)
-* [github](#github)
-* [email](#email)
-* [license](#license)
-* [repo](#repo)
+* [Installation](#Installation)
+* [Usage](#Usage)
+* [Contributors](#Contributors)
+* [Tests](#Tests)
+* [Questions](Questions)
+* [Github](#Github)
+* [Email](#Email)
+* [License](#License)
+* [Repo](#Repo)
 
-## installation
+## Installation
 ${data.installation} 
 
-## usage
+## Usage
 ${data.usage}
 
-## contributing
+## Contributing
 ${data.contributors}
 
-## tests
+## Tests
 ${data.tests}
 
-## questions
+## Questions
 "Feel free to reach out to be via github or my email with any questions."
 
 ## Github
