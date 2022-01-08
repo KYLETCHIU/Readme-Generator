@@ -35,6 +35,8 @@ const questions = () => {
             type: "input",
             name: "license",
             message: "Please provide all licenses for your project.",
+            choices: ['MIT', 'GNU'],
+            default: ["MIT"],
             validate: (value) =>{if(value){return true} else {return "Please input value to continue"}},
         },
         {
@@ -58,7 +60,7 @@ const questions = () => {
         {
             type: "input",
             name: "contributors",
-            message: "Who contributed to your project?",
+            message: "What do fututre users need to know about contributing to this project?",
             validate: (value) =>{if(value){return true} else {return "Please input value to continue"}},
         },
         {

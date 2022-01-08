@@ -1,6 +1,6 @@
 const generateMarkdown = data => {
   return `# ${data.title}
-![GitHub license](https://img.shields.io/badge/Made%20by-%40${data.License}-green)
+![GitHub license](http://img.shields.io/badge/license-${data.license}-green)
 
 ## Description
 ${data.description}
@@ -10,6 +10,8 @@ ${data.description}
 * [usage](#usage)
 * [contributors](#contributors)
 * [tests](#tests)
+* [questions](questions)
+* [github](#github)
 * [email](#email)
 * [license](#license)
 * [repo](#repo)
@@ -25,6 +27,9 @@ ${data.contributors}
 
 ## tests
 ${data.tests}
+
+## questions
+"Feel free to reach out to be via github or my email with any questions."
 
 ## Github
 ${data.github}
