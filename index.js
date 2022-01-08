@@ -39,7 +39,7 @@ const questions = () => {
         },
         {
             type: "input",
-            name: "install",
+            name: "installation",
             message: "What is required to install your project?",
             validate: (value) =>{if(value){return true} else {return "Please input value to continue"}},
         },
@@ -51,7 +51,7 @@ const questions = () => {
         },
         {
             type: "input",
-            name: "test",
+            name: "tests",
             message: "Please provide all tests for this project.",
             validate: (value) =>{if(value){return true} else {return "Please input value to continue"}},
         },

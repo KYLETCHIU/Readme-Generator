@@ -1,8 +1,8 @@
-# 3
+# Readme Generator
 ![GitHub license](https://img.shields.io/badge/Made%20by-%40undefined-green)
 
 ## Description
-4
+A simple but useful project used to generate professional README.md files.
 
 ## Table of Contents
 * [installation](#installation)
@@ -14,26 +14,26 @@
 * [repo](#repo)
 
 ## installation
-undefined 
+Node,Fs, Inquire, Utils  
 
 ## usage
-undefined
+It is meant to be used to shorten and simplify the proccess of making README.md files.
 
 ## contributing
-undefined
+KYLETCHIU
 
 ## tests
-undefined
+N/A
 
 ## Github
-1
+KYLETCHIU
 
 ## Email
- 2
+ kyletchiu@gmail.com
 
 
 ## License
- undefined 
+ MIT 
 
 ## Repo
-undefined
+https://github.com/KYLETCHIU/Readme-Generator

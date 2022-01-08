@@ -15,13 +15,13 @@ ${data.description}
 * [repo](#repo)
 
 ## installation
-${data.Installation} 
+${data.installation} 
 
 ## usage
-${data.Usage}
+${data.usage}
 
 ## contributing
-${data.Contributors}
+${data.contributors}
 
 ## tests
 ${data.tests}
@@ -33,10 +33,10 @@ ${data.github}
  ${data.email}\n
 
 ## License
- ${data.License} 
+ ${data.license} 
 
 ## Repo
-${data.Repo}
+${data.repo}
 `;
 }
 
