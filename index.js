@@ -1,7 +1,7 @@
 //constants used to make inquirer work and generate markdown
 const inquirer = require("inquirer");
 const fs = require("fs");
-const generatePage = require('./utils/generateMarkdown.js');
+const generateMD = require('./utils/generateMarkdown.js');
 
 //Questions to be answered
 const questions = () => {
@@ -77,7 +77,7 @@ const writeFile = data => {
             console.log(err);
             return;
         } else {
-            console.log("Your README has been successfully created!")
+            console.log("README Created")
         }
     })
 }; 
@@ -85,7 +85,7 @@ const writeFile = data => {
 // function call to initialize program
 questions()
 .then(answers => {
-    return generatePage(answers);
+    return generateMD(answers);
 })
 .then(data => {
     return writeFile(data);
