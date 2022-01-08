@@ -1,100 +1,95 @@
 //constants used to make inquirer work and generate markdown
 const inquirer = require("inquirer");
-const fs = require('fs');
-const axios = require("axios");
-const generate = require('./utils/generateMarkdown');
+const fs = require("fs");
+const generatePage = require('./utils/generateMarkdown.js');
 
 //Questions to be answered
-const  inquiries = [
-    {
-        type: "input",
-        name: "title",
-        message: "What is the title of your project?",
-        validate: (value) =>{if(value){return true} else {return "Please input value to continue"}},
-    },
-    {
-        type: "input",
-        name: "badge",
-        message: "Please provide your badge links.",
-        validate: (value) =>{if(value){return true} else {return "Please input value to continue"}},
-    },
-    {
-        type: "input",
-        name: "description",
-        message: "Please describe your project.",
-        validate: (value) =>{if(value){return true} else {return "Please input value to continue"}},
-    },
-    {
-        type: "input",
-        name: "installation",
-        message: "Please include installation instructions here.",
-        validate: (value) =>{if(value){return true} else {return "Please input value to continue"}},
-    },
-    {
-        type: "input",
-        name: "usage",
-        message: "How is your project used?",
-        validate: (value) =>{if(value){return true} else {return "Please input value to continue"}},
-    },
-    {
-        type: "input",
-        name: "licence",
-        message: "What licences do you have / or are using for this project?",
-        validate: (value) =>{if(value){return true} else {return "Please input value to continue"}},
-    },
-    {
-        type: "input",
-        name: "contributing",
-        message: "Please list the contributers of this project.",
-        validate: (value) =>{if(value){return true} else {return "Please input value to continue"}},
-    },
-    {
-        type: "input",
-        name: "test",
-        message: "Please provide all tests for this project.",
-        validate: (value) =>{if(value){return true} else {return "Please input value to continue"}},
-    },
-    {
-        type: "input",
-        name: "username",
-        message: "What is your github username?",
-        validate: (value) =>{if(value){return true} else {return "Please input value to continue"}},
-    },
-    {
-        type: "input",
-        name: "repo",
-        message: "Please provide link to your repo.",
-        validate: (value) =>{if(value){return true} else {return "Please input value to continue"}},
-    },
-];
+const questions = () => {
+    
+    return inquirer.prompt([
+        {
+            type: "input",
+            name: "github",
+            message: "What is your github username?",
+            validate: (value) =>{if(value){return true} else {return "Please input value to continue"}},
+        },
+        {
+            type: "input",
+            name: "email",
+            message: "Please provide your email address.",
+            validate: (value) =>{if(value){return true} else {return "Please input value to continue"}},
+        },
+        {
+            type: "input",
+            name: "title",
+            message: "What is the title of your project?",
+            validate: (value) =>{if(value){return true} else {return "Please input value to continue"}},
+        },
+        {
+            type: "input",
+            name: "description",
+            message: "How would you describe your project?",
+            validate: (value) =>{if(value){return true} else {return "Please input value to continue"}},
+        },
+        {
+            type: "input",
+            name: "license",
+            message: "Please provide all licenses for your project.",
+            validate: (value) =>{if(value){return true} else {return "Please input value to continue"}},
+        },
+        {
+            type: "input",
+            name: "install",
+            message: "What is required to install your project?",
+            validate: (value) =>{if(value){return true} else {return "Please input value to continue"}},
+        },
+        {
+            type: "input",
+            name: "usage",
+            message: "How is the project meant to be used?",
+            validate: (value) =>{if(value){return true} else {return "Please input value to continue"}},
+        },
+        {
+            type: "input",
+            name: "test",
+            message: "Please provide all tests for this project.",
+            validate: (value) =>{if(value){return true} else {return "Please input value to continue"}},
+        },
+        {
+            type: "input",
+            name: "contributors",
+            message: "Who contributed to your project?",
+            validate: (value) =>{if(value){return true} else {return "Please input value to continue"}},
+        },
+        {
+            type: "input",
+            name: "repo",
+            message: "Please provide link to your repo.",
+            validate: (value) =>{if(value){return true} else {return "Please input value to continue"}},
+        },
+]);
+};
 
-//The goodstuff to make it work
+// function to write README file using file system 
+const writeFile = data => {
+    fs.writeFile('README.md', data, err => {
+        if (err) {
+            console.log(err);
+            return;
+        } else {
+            console.log("Your README has been successfully created!")
+        }
+    })
+}; 
 
-inquirer
-.prompt (inquiries)
-.then(function(data){
-
-const queryUrl = "https://api.github.com/users/${data.username}";
-
-axios.get(queryUrl).then(function(res) {
-    const githubInformation = {
-        githubImage: res.data.avatar_url,
-        profile: res.data.html_url,
-        email: res.data.email,
-        name: res.data.name
-    };
-
-    fs.writeFile("README.md", generate(data, githubInformation), function(err){
-        if(err){
-            throw err;
-        };
-        console.log("ReadME Created");
-    });
-});
-
-});
-function init() {
-
-}
-
-init();
+// function call to initialize program
+questions()
+.then(answers => {
+    return generatePage(answers);
+})
+.then(data => {
+    return writeFile(data);
+})
+.catch(err => {
+    console.log(err)
+})
